@@ -37,11 +37,20 @@ namespace PlayingCard
     class Card
     {
     public:
-        inline const string& GetNumberString() const { return CardNumString[static_cast<int>(CardVal.Num)]; }
-        inline const string& GetSuitString() const { return CardSuitString[static_cast<int>(CardVal.St)]; }
+        inline const string& GetNumberString() const
+        {
+            return CardNumString[static_cast<int>(CardVal.Num)];
+        }
+        
+        inline const string& GetSuitString() const
+        {
+            return CardSuitString[static_cast<int>(CardVal.St)];
+        }
+        
     private:
         // holds card number and suit
         CardValue CardVal;
+        
         // using arrays instead of vectors
         static const array<const string, 5> CardSuitString;
         static const array<const string, 14> CardNumString;
