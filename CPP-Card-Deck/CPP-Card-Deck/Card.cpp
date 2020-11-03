@@ -10,18 +10,16 @@
 
 namespace PlayingCard
 {
+    
     // CardVal enum constructor
-    CardValue::CardValue(CardNumber N, CardSuit S) : Num(N), St(S) {}
-    array<const string, 5> const Card::CardSuitString
+    CardValue::CardValue(CardNumber N, CardSuit S) : Num(N), St(S)
     {
-        "Error", "Spades", "Clubs", "Diamonds", "Hearts"
-    };
+        bFaceDown = true; // update to true
+    }
 
-    array<const string, 14> const Card::CardNumString
-    {
-        "Error", "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"
-    };
+array<const string, 5> const Card::CardSuitString{ { "Error", "Spades", "Clubs", "Diamonds", "Hearts"} };
 
-    Card::Card(const CardValue& CV) : CardVal(CardNumber::Ace, CardSuit::Hearts)
-    {}
+array<const string, 14> const Card::CardNumString { { "Error", "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King" } };
+
+    Card::Card(const CardValue& CV) : CardVal(CardNumber::Ace, CardSuit::Hearts) {}
 }

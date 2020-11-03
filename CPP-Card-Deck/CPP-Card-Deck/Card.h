@@ -37,6 +37,9 @@ namespace PlayingCard
     class Card
     {
     public:
+        // constructor
+        Card(const CardValue& CV);
+        
         inline const string& GetNumberString() const
         {
             return CardNumString[static_cast<int>(CardVal.Num)];
@@ -47,6 +50,9 @@ namespace PlayingCard
             return CardSuitString[static_cast<int>(CardVal.St)];
         }
         
+        // determine if card is face up or down and make mutable
+        mutable bool bFaceDown;
+        
     private:
         // holds card number and suit
         CardValue CardVal;
@@ -54,5 +60,8 @@ namespace PlayingCard
         // using arrays instead of vectors
         static const array<const string, 5> CardSuitString;
         static const array<const string, 14> CardNumString;
+        
+        // Operator declarations
+        friend std::ostream& operator<<(std::ostream& Os, const Card& C);
     };
 }

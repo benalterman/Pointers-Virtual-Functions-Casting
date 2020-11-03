@@ -11,11 +11,16 @@
 using PlayingCard::CardValue;
 using PlayingCard::CardNumber;
 using PlayingCard::CardSuit;
+using PlayingCard::Card;
 using std::cout;
 
 int main()
 {
-    CardValue(CardNumber::Two, CardSuit::Spades);
+    CardValue TwoSpades(CardNumber::Two, CardSuit::Spades);
+    const Card CardOne(TwoSpades);
+    cout << "Card one: " << CardOne << '\n';
+    CardOne.bFaceDown = false;
+    cout << (CardOne.bFaceDown ? "The above card is facedown" : "The above card is faceup") << "\n\n";
     
     return 0;
 }
