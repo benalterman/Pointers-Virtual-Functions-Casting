@@ -14,7 +14,7 @@ namespace PlayingCard
     // CardVal enum constructor
     CardValue::CardValue(CardNumber N, CardSuit S) : Num(N), St(S)
     {
-        bFaceDown = true; // update to true
+        PlayingCard::bFaceDown = true; // update to true
     }
 
 array<const string, 5> const Card::CardSuitString{ { "Error", "Spades", "Clubs", "Diamonds", "Hearts"} };
