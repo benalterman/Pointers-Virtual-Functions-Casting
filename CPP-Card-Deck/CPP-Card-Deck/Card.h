@@ -40,18 +40,20 @@ namespace PlayingCard
         // constructor
         Card(const CardValue& CV);
         
+        // getter for Number name
         inline const string& GetNumberString() const
         {
             return CardNumString[static_cast<int>(CardVal.Num)];
         }
         
+        // getter for Suit name
         inline const string& GetSuitString() const
         {
             return CardSuitString[static_cast<int>(CardVal.St)];
         }
         
-        // determine if card is face up or down and make mutable
-        mutable bool bFaceDown;
+        // determine if card is face up or down and make mutable. default is facedown, set to false to view face
+        mutable bool bFaceDown = true;
         
     private:
         // holds card number and suit

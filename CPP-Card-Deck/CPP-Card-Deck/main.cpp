@@ -16,11 +16,11 @@ using std::cout;
 
 int main()
 {
-    CardValue TwoSpades(CardNumber::Two, CardSuit::Spades);
-    const Card CardOne(TwoSpades);
-    cout << "Card one: " << CardOne << '\n';
+    CardValue TwoSpades(CardNumber::Two, CardSuit::Spades); // set card value
+    const Card CardOne(TwoSpades); // construct card
+    cout << "Card one is the " << CardOne << '\n';
     CardOne.bFaceDown = false;
-    cout << (CardOne.bFaceDown ? "The above card is facedown" : "The above card is faceup") << "\n\n";
+    cout << (CardOne.bFaceDown ? "The above card is facedown." : "The above card is faceup.") << "\n\n";
     
     return 0;
 }
